@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.8//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.jspider.hibernate.beans.PhoneNumber" table="phone_numbers">
+<composite-id>
+<key-property name="regno" type="java.lang.Integer" column="regno" />
+<key-property name="numbertype" type="java.lang.String" column="numbertype" />
+</composite-id>
+<property name="number" type="java.lang.Integer" column="number" />
+
+</class>
+</hibernate-mapping>

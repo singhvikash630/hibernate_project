@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD 3.8//EN"
+  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+   <hibernate-mapping>
+  <class name="com.jspider.hibernate.beans.InterviewDetails" table="interview_details">
+  <id name="interviewId" type="java.lang.Integer" column="interviewid" />
+  <property name="companyName" type="java.lang.String" column="companyname" />
+  <property name="technology" type="java.lang.String" column="technology" />
+  <property name="location" type="java.lang.String" column="location" />
+  
+  <set name="students"
+       table="student_interview"
+         inverse="true"
+          lazy="false"
+           fetch="select"
+            cascade="all">
+             <key column="interviewid" not-null="true" />
+               <many-to-many entity-name="com.jspider.hibernate.beans.Student">
+                <column name="regno" not-null="true" />
+              </many-to-many>
+  </set>
+  
+  </class>
+  
+  </hibernate-mapping>

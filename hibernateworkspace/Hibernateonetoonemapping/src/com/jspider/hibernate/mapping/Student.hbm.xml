@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.8//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.jspider.hibernate.beans.Student" table="student">
+		<id name="regno" type="java.lang.Integer" column="regno" />
+		<property name="fname" type="java.lang.String" column="fname" />
+		<property name="Mname" type="java.lang.String" column="mname" />
+		<property name="Lname" type="java.lang.String" column="lname" />
+
+		<one-to-one name="users" class="com.jspider.hibernate.beans.Users" cascade="all" fetch="join"/>
+	</class>
+
+</hibernate-mapping>

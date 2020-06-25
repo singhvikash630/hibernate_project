@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.8//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="com.jspider.hibernate.beans.Student" table="student">
+<id name="regno" type="java.lang.Integer" column="regno" />
+<property name="fname" type="java.lang.String" column="fname" />
+<property name="Mname" type="java.lang.String" column="mname" />
+<property name="Lname" type="java.lang.String" column="lname" />
+
+<many-to-one name="course" class="com.jspider.hibernate.beans.Course" column="courseid" fetch="join" />
+
+
+<!--  <one-to-one name="users" class ="com.jspider.hibernate.beans.Users" cascade="all" /> 
+ <bag></bag> give all the records
+<list></list>
+ 
+ <set name="phoneNumbers" 
+     table="phone_numbers"
+     inverse="true" 
+     cascade="all"  >
+     <key column="regno" />
+     <one-to-many class="com.jspider.hibernate.beans.PhoneNumber"/>
+</set>
+
+<set name="interviewDetails"
+     table="student_interview"
+       inverse="false"
+        lazy="false"
+        fetch="select"
+          cascade="all">
+           <key column="regno" not-null="true"/>
+            <many-to-many entity-name="com.jspider.hibernate.beans.InterviewDetails">
+               <column name="interviewid" not-null="true" />
+            </many-to-many>
+</set> -->
+
+</class>
+
+</hibernate-mapping>
